@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UbiqoCR</title>
+  <meta name="description" content="Work in progress..." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="#">UbiqoCR</a>
+      <ul class="menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#acerca">Acerca</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="inicio" class="container">
+    <section class="hero">
+      <h1>Work un progress</h1>
+      <p>Este proyecto está en progreso</p>
+      <button id="cta">Aún no está listo</button>
+    </section>
+
+    <section id="acerca">
+      <h2>Acerca</h2>
+      <p>Este proyecto me dará un porsche</p>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <form onsubmit="return false;">
+        <label>
+          Tu correo
+          <input type="email" id="email" placeholder="tucorreo@ejemplo.com" required />
+        </label>
+        <button id="enviar">Enviar</button>
+      </form>
+      <p id="mensaje" class="ok" hidden>¡Gracias! Te escribiré pronto.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> UbiqoCR</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
