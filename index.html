@@ -3,34 +3,39 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UbiqoCR</title>
-  <meta name="description" content="Work in progress..." />
+  <title>Mi Sitio</title>
+  <meta name="description" content="Sitio de ejemplo con HTML, VS Code y GitHub Pages." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <nav class="nav">
-      <a class="logo" href="#">UbiqoCR</a>
+      <a class="logo" href="index.html">MiSitio</a>
       <ul class="menu">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#acerca">Acerca</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="cafeterias.html">Cafeterías</a></li>
+        <li><a href="#" title="Próximamente">Restaurantes</a></li>
+        <li><a href="#" title="Próximamente">Recreación</a></li>
+        <li><a href="#" title="Próximamente">Deportes</a></li>
       </ul>
     </nav>
   </header>
 
   <main id="inicio" class="container">
+    <!-- Sección Hero -->
     <section class="hero">
-      <h1>Work un progress</h1>
-      <p>Este proyecto está en progreso</p>
-      <button id="cta">Aún no está listo</button>
+      <h1>¡Hola, mundo! 👋</h1>
+      <p>Esta es mi primera página usando HTML, VS Code y GitHub Pages.</p>
+      <button id="cta">Haz clic</button>
     </section>
 
+    <!-- Sección Acerca -->
     <section id="acerca">
       <h2>Acerca</h2>
-      <p>Este proyecto me dará un porsche</p>
+      <p>Este proyecto es un ejemplo minimalista para aprender el flujo de trabajo.</p>
     </section>
 
+    <!-- Sección Contacto -->
     <section id="contacto">
       <h2>Contacto</h2>
       <form onsubmit="return false;">
@@ -45,7 +50,7 @@
   </main>
 
   <footer class="site-footer">
-    <small>© <span id="year"></span> UbiqoCR</small>
+    <small>© <span id="year"></span> MiSitio</small>
   </footer>
 
   <script src="script.js"></script>
