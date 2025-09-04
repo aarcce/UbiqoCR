@@ -3,38 +3,355 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cafetería 1</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <title>Cafetería 1 · UbiqoCR</title>
+  <meta name="description" content="Horario, pet-friendly, menú, ubicación y contacto de Cafetería 1." />
+  <link rel="stylesheet" href="../styles.css?v=cafe1-horario" />
+
+  <!-- Open Graph básico -->
+  <meta property="og:title" content="Cafetería 1 · UbiqoCR" />
+  <meta property="og:description" content="Horario, pet-friendly, menú y ubicación." />
+  <meta property="og:image" content="https://aarcce.github.io/UbiqoCR/assets/img/cafeteria1/1.jpg" />
+  <meta property="og:type" content="website" />
 </head>
-<body>
+<body class="cafe-page">
   <header class="site-header">
     <nav class="nav">
-      <a class="logo" href="../index.html">MiSitio</a>
+      <a class="logo" href="../index.html">UbiqoCR</a>
       <ul class="menu">
         <li><a href="../index.html#inicio">Inicio</a></li>
         <li><a href="../cafeterias.html" aria-current="page">Cafeterías</a></li>
-        <li><a href="#" title="Próximamente">Restaurantes</a></li>
-        <li><a href="#" title="Próximamente">Recreación</a></li>
-        <li><a href="#" title="Próximamente">Deportes</a></li>
+        <li><a href="../restaurantes.html" title="Próximamente">Restaurantes</a></li>
+        <li><a href="../recreacion.html" title="Próximamente">Recreación</a></li>
+        <li><a href="../deportes.html" title="Próximamente">Deportes</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="container">
-    <h1>Cafetería 1</h1>
+    <!-- Microdatos (SEO local) -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"CafeOrCoffeeShop",
+      "name":"Cafetería 1",
+      "address":{"@type":"PostalAddress","addressCountry":"CR"},
+      "telephone":"+50622223333",
+      "url":"https://aarcce.github.io/UbiqoCR/cafeterias/cafeteria1.html",
+      "servesCuisine":"Coffee, Bakery",
+      "petsAllowed": true
+    }
+    </script>
 
-    <p><strong>Horario:</strong> Lunes a Domingo, 8:00 am – 8:00 pm</p>
-    <p><strong>Pet Friendly:</strong> ✅ Sí, puedes venir con tus mascotas.</p>
-    <p><strong>Menú:</strong> Café, repostería, desayunos y almuerzos ligeros.</p>
+    <!-- Migas de pan -->
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../index.html">Inicio</a>
+      <span aria-hidden="true">/</span>
+      <a href="../cafeterias.html">Cafeterías</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Cafetería 1</span>
+    </nav>
 
-    <h2>Imagen</h2>
-    <img src="../assets/img/cafeteria1.jpg" alt="Cafetería 1" style="max-width:400px; border-radius:8px;">
+    <div class="cafe-header">
+      <div class="cafe-title">
+        <h1>Cafetería 1</h1>
+        <p class="cafe-subtitle">Café de especialidad, desayunos y repostería artesanal.</p>
+
+        <div class="cafe-cta">
+          <a class="btn" href="tel:+50622223333">Llamar</a>
+          <a class="btn outline" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/search/?api=1&query=Cafeter%C3%ADa%201%20Costa%20Rica">
+            Cómo llegar
+          </a>
+          <a class="btn only-mobile" href="tel:+50622223333">Reservar</a>
+        </div>
+      </div>
+
+      <!-- Foto principal => abre galería -->
+      <div class="cafe-hero">
+        <button class="hero-image-button" data-gallery="cafe1" data-index="0" aria-label="Abrir galería de fotos">
+          <img src="../assets/img/cafeteria1/1.jpg" alt="Cafetería 1 - Foto principal" />
+        </button>
+      </div>
+    </div>
+
+    <!-- Tarjetas de información (Horario ahora enlaza al detalle) -->
+    <section aria-labelledby="info">
+      <h2 id="info" class="sr-only">Información</h2>
+      <div class="info-grid">
+        <!-- Horario (tarjeta pequeña + link) -->
+        <a class="info-card link-card" href="#horario-detallado">
+          <img class="info-logo" src="../assets/icons/clock.svg" alt="" aria-hidden="true">
+          <div>
+            <h3>Horario</h3>
+            <p>Lunes a Domingo · 8:00 am – 8:00 pm</p>
+            <span class="link-hint">Ver horario completo</span>
+          </div>
+        </a>
+
+        <!-- Pet-friendly -->
+        <article class="info-card">
+          <img class="info-logo" src="../assets/icons/paw.svg" alt="" aria-hidden="true">
+          <div>
+            <h3>Pet-friendly</h3>
+            <p>✅ Se permiten mascotas</p>
+          </div>
+        </article>
+
+        <!-- Menú -->
+        <article class="info-card">
+          <img class="info-logo" src="../assets/icons/menu.svg" alt="" aria-hidden="true">
+          <div>
+            <h3>Menú</h3>
+            <p>Café, repostería, desayunos y almuerzos ligeros.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Galería (miniaturas) -->
+    <section aria-labelledby="galeria">
+      <h2 id="galeria">Galería</h2>
+      <div class="thumbs" data-gallery="cafe1">
+        <button class="thumb" data-index="0" aria-label="Abrir foto 1">
+          <img src="../assets/img/cafeteria1/1.jpg" alt="Foto 1 de Cafetería 1">
+        </button>
+        <button class="thumb" data-index="1" aria-label="Abrir foto 2">
+          <img src="../assets/img/cafeteria1/2.jpg" alt="Foto 2 de Cafetería 1">
+        </button>
+        <button class="thumb" data-index="2" aria-label="Abrir foto 3">
+          <img src="../assets/img/cafeteria1/3.jpg" alt="Foto 3 de Cafetería 1">
+        </button>
+        <button class="thumb" data-index="3" aria-label="Abrir foto 4">
+          <img src="../assets/img/cafeteria1/4.jpg" alt="Foto 4 de Cafetería 1">
+        </button>
+        <button class="thumb" data-index="4" aria-label="Abrir foto 5">
+          <img src="../assets/img/cafeteria1/5.jpg" alt="Foto 5 de Cafetería 1">
+        </button>
+      </div>
+    </section>
+
+    <!-- Sección de Horario detallado -->
+    <section id="horario-detallado" class="schedule-section" aria-labelledby="h-detalle">
+      <h2 id="h-detalle">Horario completo</h2>
+      <div class="schedule-card">
+        <table class="hours">
+          <tr><th>Lunes</th><td>8:00 – 20:00</td></tr>
+          <tr><th>Martes</th><td>8:00 – 20:00</td></tr>
+          <tr><th>Miércoles</th><td>8:00 – 20:00</td></tr>
+          <tr><th>Jueves</th><td>8:00 – 20:00</td></tr>
+          <tr><th>Viernes</th><td>8:00 – 20:00</td></tr>
+          <tr><th>Sábado</th><td>8:00 – 20:00</td></tr>
+          <tr><th>Domingo</th><td>8:00 – 20:00</td></tr>
+        </table>
+      </div>
+      <div class="back-wrap">
+        <a class="btn outline" href="#info">↑ Volver arriba</a>
+      </div>
+    </section>
+
+    <!-- Mapa -->
+    <section aria-labelledby="mapa">
+      <h2 id="mapa">Ubicación</h2>
+      <div class="map-wrap">
+        <iframe
+          title="Mapa Cafetería 1"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Cafeter%C3%ADa%201%20Costa%20Rica&output=embed">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Volver -->
+    <div class="back-wrap">
+      <a class="btn back" href="../cafeterias.html">← Volver a Cafeterías</a>
+    </div>
   </main>
 
   <footer class="site-footer">
-    <small>© <span id="year"></span> MiSitio</small>
+    <small>© <span id="year"></span> UbiqoCR</small>
   </footer>
 
-  <script src="../script.js"></script>
+  <!-- WhatsApp flotante -->
+  <a class="wa-float" href="https://wa.me/50688888888?text=Hola%20%C2%BFtienen%20disponible%20hoy%3F"
+     target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+      <path d="M16 3C9.4 3 4 8.3 4 14.8c0 2.5.8 4.8 2.2 6.7L4 29l7-2.2c1.8 1 3.8 1.5 5.9 1.5 6.6 0 12-5.3 12-11.8S22.6 3 16 3zm0 21.3c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.1 1 1-3-.2-.4c-1-1.5-1.5-3.2-1.5-5 0-5 4.2-9.1 9.3-9.1s9.3 4.1 9.3 9.1-4.2 9.1-9.3 9.1zm5-5c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.8-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.7.1-.1.3-.4.4-.6.1-.2.2-.3.3-.5.1-.2.1-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8 0 1.6 1.2 3.1 1.3 3.3.2.2 2.4 3.7 5.8 5.1 3.4 1.4 3.4.9 4 .9s2-.8 2.3-1.6c.3-.8.3-1.5.2-1.6-.1 0-.3-.1-.6-.3z" fill="currentColor"/>
+    </svg>
+  </a>
+
+  <script src="../script.js?v=cafe1-gal"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cafetería 1 · UbiqoCR</title>
+  <meta name="description" content="Horario, pet-friendly, menú, ubicación y contacto de Cafetería 1." />
+  <link rel="stylesheet" href="../styles.css?v=cafe1-gal" />
+
+  <!-- Open Graph básico -->
+  <meta property="og:title" content="Cafetería 1 · UbiqoCR" />
+  <meta property="og:description" content="Horario, pet-friendly, menú y ubicación." />
+  <meta property="og:image" content="https://aarcce.github.io/UbiqoCR/assets/img/cafeteria1/1.jpg" />
+  <meta property="og:type" content="website" />
+</head>
+<body class="cafe-page">
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="../index.html">UbiqoCR</a>
+      <ul class="menu">
+        <li><a href="../index.html#inicio">Inicio</a></li>
+        <li><a href="../cafeterias.html" aria-current="page">Cafeterías</a></li>
+        <li><a href="../restaurantes.html" title="Próximamente">Restaurantes</a></li>
+        <li><a href="../recreacion.html" title="Próximamente">Recreación</a></li>
+        <li><a href="../deportes.html" title="Próximamente">Deportes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Microdatos (SEO local) -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"CafeOrCoffeeShop",
+      "name":"Cafetería 1",
+      "address":{"@type":"PostalAddress","addressCountry":"CR"},
+      "telephone":"+50622223333",
+      "url":"https://aarcce.github.io/UbiqoCR/cafeterias/cafeteria1.html",
+      "servesCuisine":"Coffee, Bakery",
+      "petsAllowed": true
+    }
+    </script>
+
+    <!-- Migas de pan -->
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <a href="../index.html">Inicio</a>
+      <span aria-hidden="true">/</span>
+      <a href="../cafeterias.html">Cafeterías</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">Cafetería 1</span>
+    </nav>
+
+    <div class="cafe-header">
+      <div class="cafe-title">
+        <h1>Cafetería 1</h1>
+        <p class="cafe-subtitle">Café de especialidad, desayunos y repostería artesanal.</p>
+
+        <div class="cafe-cta">
+          <!-- Cambia el número y el enlace de Maps si lo deseas -->
+          <a class="btn" href="tel:+50622223333">Llamar</a>
+          <a class="btn outline" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/search/?api=1&query=Cafeter%C3%ADa%201%20Costa%20Rica">
+            Cómo llegar
+          </a>
+          <a class="btn only-mobile" href="tel:+50622223333">Reservar</a>
+        </div>
+      </div>
+
+      <!-- Foto principal => abre galería -->
+      <div class="cafe-hero">
+        <button class="hero-image-button" data-gallery="cafe1" data-index="0" aria-label="Abrir galería de fotos">
+          <img src="../assets/img/cafeteria1/1.jpg" alt="Cafetería 1 - Foto principal" />
+        </button>
+      </div>
+    </div>
+
+    <!-- Tarjetas de información con LOGOS -->
+    <section aria-labelledby="info">
+      <h2 id="info" class="sr-only">Información</h2>
+      <div class="info-grid">
+        <article class="info-card">
+          <img class="info-logo" src="../assets/icons/clock.png" alt="" aria-hidden="true">
+          <div>
+            <h3>Horario</h3>
+            <table class="hours">
+              <tr><th>Lunes</th><td>8:00 – 20:00</td></tr>
+              <tr><th>Martes</th><td>8:00 – 20:00</td></tr>
+              <tr><th>Miércoles</th><td>8:00 – 20:00</td></tr>
+              <tr><th>Jueves</th><td>8:00 – 20:00</td></tr>
+              <tr><th>Viernes</th><td>8:00 – 20:00</td></tr>
+              <tr><th>Sábado</th><td>8:00 – 20:00</td></tr>
+              <tr><th>Domingo</th><td>8:00 – 20:00</td></tr>
+            </table>
+          </div>
+        </article>
+
+        <article class="info-card">
+          <img class="info-logo" src="../assets/icons/paw.png" alt="" aria-hidden="true">
+          <div>
+            <h3>Pet-friendly</h3>
+            <p>Se permiten mascotas</p>
+          </div>
+        </article>
+
+        <article class="info-card">
+          <img class="info-logo" src="../assets/icons/menu.png" alt="" aria-hidden="true">
+          <div>
+            <h3>Menú</h3>
+            <p>Café, repostería, desayunos y almuerzos ligeros.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Miniaturas de la galería (clic abre lightbox) -->
+    <section aria-labelledby="galeria">
+      <h2 id="galeria">Galería</h2>
+      <div class="thumbs" data-gallery="cafe1">
+        <button class="thumb" data-index="0" aria-label="Abrir foto 1">
+          <img src="../assets/img/cafeteria1/1.jpg" alt="Foto 1 de Cafetería 1">
+        </button>
+        <button class="thumb" data-index="1" aria-label="Abrir foto 2">
+          <img src="../assets/img/cafeteria1/2.jpg" alt="Foto 2 de Cafetería 1">
+        </button>
+        <button class="thumb" data-index="2" aria-label="Abrir foto 3">
+          <img src="../assets/img/cafeteria1/3.jpg" alt="Foto 3 de Cafetería 1">
+        </button>
+        <button class="thumb" data-index="3" aria-label="Abrir foto 4">
+          <img src="../assets/img/cafeteria1/4.jpg" alt="Foto 4 de Cafetería 1">
+        </button>
+        <button class="thumb" data-index="4" aria-label="Abrir foto 5">
+          <img src="../assets/img/cafeteria1/5.jpg" alt="Foto 5 de Cafetería 1">
+        </button>
+      </div>
+    </section>
+
+    <!-- Mapa embebido -->
+    <section aria-labelledby="mapa">
+      <h2 id="mapa">Ubicación</h2>
+      <div class="map-wrap">
+        <!-- Cambia la query por tu dirección exacta si quieres -->
+        <iframe
+          title="Mapa Cafetería 1"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Cafeter%C3%ADa%201%20Costa%20Rica&output=embed">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Volver -->
+    <div class="back-wrap">
+      <a class="btn back" href="../cafeterias.html">← Volver a Cafeterías</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> UbiqoCR</small>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp (cambia el número) -->
+  <a class="wa-float" href="https://wa.me/50688888888?text=Hola%20%C2%BFtienen%20disponible%20hoy%3F"
+     target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+      <path d="M16 3C9.4 3 4 8.3 4 14.8c0 2.5.8 4.8 2.2 6.7L4 29l7-2.2c1.8 1 3.8 1.5 5.9 1.5 6.6 0 12-5.3 12-11.8S22.6 3 16 3zm0 21.3c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.1 1 1-3-.2-.4c-1-1.5-1.5-3.2-1.5-5 0-5 4.2-9.1 9.3-9.1s9.3 4.1 9.3 9.1-4.2 9.1-9.3 9.1zm5-5c-.3-.2-1.9-1-2.2-1.1-.3-.1-.5-.2-.7.2-.2.3-.9 1.1-1.1 1.3-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.7-1.8-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.7.1-.1.3-.4.4-.6.1-.2.2-.3.3-.5.1-.2.1-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8 0 1.6 1.2 3.1 1.3 3.3.2.2 2.4 3.7 5.8 5.1 3.4 1.4 3.4.9 4 .9s2-.8 2.3-1.6c.3-.8.3-1.5.2-1.6-.1 0-.3-.1-.6-.3z" fill="currentColor"/>
+    </svg>
+  </a>
+
+  <script src="../script.js?v=cafe1-gal"></script>
 </body>
 </html>

@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mi Sitio</title>
+  <title>UbiqoCR</title>
   <meta name="description" content="Sitio de ejemplo con HTML, VS Code y GitHub Pages." />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=home3" />
 </head>
 <body>
   <header class="site-header">
     <nav class="nav">
       <a class="logo" href="index.html">UbiqoCR</a>
       <ul class="menu">
-        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#inicio" aria-current="page">Inicio</a></li>
         <li><a href="cafeterias.html">Cafeterías</a></li>
         <li><a href="#" title="Próximamente">Restaurantes</a></li>
         <li><a href="#" title="Próximamente">Recreación</a></li>
@@ -21,31 +21,30 @@
     </nav>
   </header>
 
-  <main id="inicio" class="container">
-    <!-- Sección Hero -->
-    <section class="hero">
+  <main class="container">
+    <!-- Hero principal -->
+    <section class="hero center" id="inicio">
       <h1>UbiqoCR</h1>
-      <p>Estamos trabajando en ello...</p>
-      <button id="cta">Haz clic</button>
+      <p class="subtitle">Estamos trabajando en ello</p>
     </section>
 
-    <!-- Sección Acerca -->
-    <section id="acerca de nosotros">
-      <h2>Acerca</h2>
-      <p>Este proyecto está en proceso</p>
-    </section>
-
-    <!-- Sección Contacto -->
-    <section id="contacto">
-      <h2>Contacto</h2>
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contacto">
+      <h2>Contáctanos</h2>
       <form onsubmit="return false;">
         <label>
-          Tu correo
+          Correo electrónico
           <input type="email" id="email" placeholder="tucorreo@ejemplo.com" required />
         </label>
+
+        <label>
+          Mensaje
+          <textarea id="mensaje" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+        </label>
+
         <button id="enviar">Enviar</button>
       </form>
-      <p id="mensaje" class="ok" hidden>¡Gracias! Te escribiré pronto.</p>
+      <p id="mensaje-ok" hidden>¡Gracias! Te escribiré pronto.</p>
     </section>
   </main>
 

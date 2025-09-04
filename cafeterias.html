@@ -4,43 +4,79 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cafeterías</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=filters1" />
 </head>
 <body>
   <header class="site-header">
     <nav class="nav">
-      <a class="logo" href="index.html">MiSitio</a>
+      <a class="logo" href="index.html">UbiqoCR</a>
       <ul class="menu">
         <li><a href="index.html#inicio">Inicio</a></li>
         <li><a href="cafeterias.html" aria-current="page">Cafeterías</a></li>
-        <li><a href="restaurantes.html">Restaurantes</a></li>
-        <li><a href="recreacion.html">Recreación</a></li>
-        <li><a href="deportes.html">Deportes</a></li>
+        <li><a href="#" title="Próximamente">Restaurantes</a></li>
+        <li><a href="#" title="Próximamente">Recreación</a></li>
+        <li><a href="#" title="Próximamente">Deportes</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="container">
     <h1>Cafeterías</h1>
-    <p>Selecciona una cafetería para ver su información.</p>
+    <p>Filtra por provincia o cantón para encontrar cafeterías cercanas.</p>
 
-    <div class="grid-cards">
-      <!-- Botón Cafetería 1 -->
-      <a href="cafeterias/cafeteria1.html" class="cafeteria-boton">
+    <!-- Filtros -->
+    <section class="filters-bar" aria-label="Filtros por ubicación">
+      <div class="filters-row">
+        <label class="filters-field">
+          <span>Provincia</span>
+          <select id="filtro-provincia">
+            <option value="">Todas</option>
+            <option value="san-jose">San José</option>
+            <option value="alajuela">Alajuela</option>
+            <option value="cartago">Cartago</option>
+            <option value="heredia">Heredia</option>
+          </select>
+        </label>
+
+        <label class="filters-field">
+          <span>Cantón</span>
+          <select id="filtro-canton" disabled>
+            <option value="">Todos</option>
+          </select>
+        </label>
+
+        <div class="filters-actions">
+          <button id="aplicar-filtros" class="btn">Aplicar</button>
+          <button id="limpiar-filtros" class="btn outline">Limpiar</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lista de cafeterías -->
+    <div class="grid-cards" id="listado-cafeterias">
+      <!-- Ejemplos: añade/edita provincia/cantón según tu realidad -->
+      <a href="cafeterias/cafeteria1.html"
+         class="cafeteria-boton"
+         data-province="san-jose"
+         data-canton="montes-de-oca">
         <img src="assets/img/cafeteria1.jpg" alt="Cafetería 1" />
-        <span>Cafetería 1</span>
+        <span>Cafetería 1 · Montes de Oca, San José</span>
       </a>
 
-      <!-- Botón Cafetería 2 -->
-      <a href="cafeterias/cafeteria2.html" class="cafeteria-boton">
+      <a href="cafeterias/cafeteria2.html"
+         class="cafeteria-boton"
+         data-province="heredia"
+         data-canton="heredia">
         <img src="assets/img/cafeteria2.jpg" alt="Cafetería 2" />
-        <span>Cafetería 2</span>
+        <span>Cafetería 2 · Heredia, Heredia</span>
       </a>
 
-      <!-- Botón Cafetería 3 -->
-      <a href="cafeterias/cafeteria3.html" class="cafeteria-boton">
+      <a href="cafeterias/cafeteria3.html"
+         class="cafeteria-boton"
+         data-province="alajuela"
+         data-canton="alajuela">
         <img src="assets/img/cafeteria3.jpg" alt="Cafetería 3" />
-        <span>Cafetería 3</span>
+        <span>Cafetería 3 · Alajuela, Alajuela</span>
       </a>
     </div>
   </main>
@@ -49,6 +85,6 @@
     <small>© <span id="year"></span> MiSitio</small>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=filters1"></script>
 </body>
 </html>
